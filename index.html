@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>TO-DO</title>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <div class="h-full bg-stone-50 w-full relative">
+
+        <div id="textField" class="hidden textField bg-stone-300 h-[30vh] w-[30vh] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+          <input id="texts" type="text" class="w-[50vh] h-full bg-green-300 ">
+          <!-- a button to reveal what is in the text  -->
+        </div>
+        <div class="reveal">
+          <button id="reveal">
+            <i class="ri-terminal-box-fill"></i></div>
+
+          </button>
+        <div class="add w-full bg-stone-400 h-[10vh]">
+          <button id="add"><i class="ri-add-circle-line"></i></button>
+        </div>
+        <button id="del"><i class="ri-close-circle-line"></i></button>
+        <button id="edit"><i class="ri-pencil-line"></i></button>
+        <!-- <div class="placeForToDo bg-green-400 w-full h-screen">
+          <ol id="ordered">
+
+          </ol>
+        </div> -->
+<div class="delete bg-yellow-400 h-[10vh] w-full"></div>
+        <!-- make an item and then delete it  -->
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
