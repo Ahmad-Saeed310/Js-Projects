@@ -13,28 +13,36 @@
   <body>
     <header></header>
     <main>
-      <div class="h-full bg-stone-50 w-full relative">
-
-        <div id="textField" class="hidden textField bg-stone-300 h-[30vh] w-[30vh] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-          <input id="texts" type="text" class="w-[50vh] h-full bg-green-300 ">
+      <div class="h-screen bg-stone-300 w-full relative p-[5vh]">
+        <div
+          id="textField"
+          class="hidden textField bg-stone-300 h-[30vh] w-[30vh] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center"
+        >
+          <input id="texts" type="text" class="w-[50vh] h-full bg-stone-1 00 outline-none" />
           <!-- a button to reveal what is in the text  -->
         </div>
-        <div class="reveal">
+        <div class="reveal hidden">
           <button id="reveal">
-            <i class="ri-terminal-box-fill"></i></div>
-
+            <i class="ri-terminal-box-fill"></i>
           </button>
-        <div class="add w-full bg-stone-400 h-[10vh]">
-          <button id="add"><i class="ri-add-circle-line"></i></button>
         </div>
-        <button id="del"><i class="ri-close-circle-line"></i></button>
-        <button id="edit"><i class="ri-pencil-line"></i></button>
+
+        <div
+          class="add bg-stone-200 h-[5vh] w-[5vh] rounded-md flex items-center justify-center"
+        >
+          <button id="add" class="w-[5vh] h-[5vh]">
+            <i class="ri-add-circle-line w-full h-full"></i>
+          </button>
+        </div>
+        <div class="title"><h2 class="text-3xl text-stone-800">To Do</h2></div>
+        <!-- <button id="del"><i class="ri-close-circle-line "></i></button> -->
+        <button id="edit"><i class="ri-pencil-line hidden"></i></button>
         <!-- <div class="placeForToDo bg-green-400 w-full h-screen">
           <ol id="ordered">
 
           </ol>
         </div> -->
-<div class="delete bg-yellow-400 h-[10vh] w-full"></div>
+        <div class="delete  h-[20vh] w-full "></div>
         <!-- make an item and then delete it  -->
       </div>
     </main>
