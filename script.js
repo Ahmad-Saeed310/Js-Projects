@@ -7,11 +7,11 @@ const ordered = document.querySelector(".delete");
 const texts = document.getElementById("texts");
 const reveal = document.querySelector(".reveal");
 
-localStorage.setItem("1",texts.value);
+localStorage.setItem("1", texts.value);
 
 const task = [];
 reveal.addEventListener("click", function () {
-  console.log(task.length)
+  console.log(task.length);
   console.log(texts.value);
 });
 
@@ -34,11 +34,9 @@ add.addEventListener("click", function () {
 //   // textField.style.display = "none";
 // });
 
-
 texts.addEventListener("keydown", function (event) {
   // event.preventDefault();
-  if (event.key === "Enter")
-    {
+  if (event.key === "Enter") {
     textField.classList.add("hidden");
     const cross = document.createElement("i");
     cross.classList.add("ri-delete-back-2-line");
@@ -50,15 +48,15 @@ texts.addEventListener("keydown", function (event) {
     li.style.height = "30px";
     li.style.width = "100%";
     li.style.display = "flex";
-    li.style.justifyItems = "center"
-    li.style.justifyContent = "space-between"
+    li.style.justifyItems = "center";
+    li.style.justifyContent = "space-between";
 
     const checkes = document.createElement("input");
-    checkes.setAttribute("type","checkbox")
-    const indexed= task.length+1;
+    checkes.setAttribute("type", "checkbox");
+    const indexed = task.length + 1;
     const serial = document.createElement("i");
     serial.textContent = indexed;
-localStorage.setItem("1",texts.value);
+    localStorage.setItem("1", texts.value);
     li.textContent = localStorage.getItem("1");
     texts.value = "";
     ordered.appendChild(li);
@@ -68,33 +66,63 @@ localStorage.setItem("1",texts.value);
     li.appendChild(edit);
     cross.addEventListener("click", function () {
       // task.pop();
-      li.remove()
+      li.remove();
       // cross.remove()
-      console.log(task.length)
+      console.log(task.length);
       // localStorage.setItem(li);
-
     });
-    edit.addEventListener("click",function(){
-      console.log(li.textContent)
-    })
-    checkes.addEventListener("click",function(){
-      
-      if(checkes.checked){
-  
-        li.style.textDecoration =  "line-through"
-        console.log(checkes.checked)
-    }else{
-       li.style.textDecoration =  ""
-        console.log(checkes.checked)
+    // edit.addEventListener("click",function(){
+    //   alert(li.textContent)
+    //   li.textContent= "";
+    // })
 
-    }
+    //     edit.addEventListener("click", function () {
+    //     const oldText = li.firstChild.textContent;
+    // console.log(li.firstChild)
+    //     const input = document.createElement("input");
+    //     input.value = oldText;
+
+    //     li.firstChild.replaceWith(input);
+
+    //     input.focus();
+
+    //     input.addEventListener("keydown", function (event) {
+    //         if (event.key === "Enter") {
+    //             li.firstChild.replaceWith(document.createTextNode(input.value));
+    //         }
+    //     });
+    // });
+
+    edit.addEventListener("click", function () {
+      const alreadyPlaced = li.firstChild.textContent;
+
+      const newText = document.createElement("input");
+      newText.value = alreadyPlaced;
+
+      li.firstChild.replaceWith(newText);
+
+    newText.addEventListener("keydown",function(){
+      if(event.key === "Enter"){
+        li.textContent = newText.value;
+      }
     })
-    task.push(li)
-    console.log(task.length+"task array")
+
+      console.log(alreadyPlaced);
+    });
+    checkes.addEventListener("click", function () {
+      if (checkes.checked) {
+        li.style.textDecoration = "line-through";
+        console.log(checkes.checked);
+      } else {
+        li.style.textDecoration = "";
+        console.log(checkes.checked);
+      }
+    });
+    task.push(li);
+    console.log(task.length + "task array");
 
     const local = localStorage.getItem("1");
-    console.log(local)
-
+    console.log(local);
   }
 });
 
